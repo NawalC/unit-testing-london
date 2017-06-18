@@ -1,0 +1,17 @@
+{
+  "name": "unit-testing",
+  "version": "0.0.1",
+  "description": "Introduction to unit testing exercises",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^20.0.4"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
