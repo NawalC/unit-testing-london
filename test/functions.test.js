@@ -1,6 +1,6 @@
 test('Remove middle', () => {
   const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle'];
-  
+
   const expectedWords = [ 'mouse', 'giraffe', 'window', 'bottle'];
   const expectedOutput = [ 'queen' ];
 
@@ -12,7 +12,7 @@ test('Remove middle', () => {
 
 test('Get second and third', () => {
   const numbers = [ 90, 5, 11, 5, 6 ];
-  
+
   const expectedOutput = [ 5, 11];
   const expectedNumbers = [ 90, 5, 11, 5, 6 ];
 
@@ -29,7 +29,7 @@ test('Add 1 to each item in myArray', () => {
   const expected = [ 32, 58, 13, 6];
   const output = functions.mapper( myArray );
 
-  
+
   expect(output).toEqual(expected);
   expect(myArray).toEqual(unchanged);
 });
@@ -77,7 +77,7 @@ test('Find largest number', () => {
 test('Build train', () => {
   const train = functions.buildTrain( 8 );
 
-  expect( train.numberOfCarriages ).toEqual( 8 );  
+  expect( train.numberOfCarriages ).toEqual( 8 );
 });
 
 test('Book a table', () => {
