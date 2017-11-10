@@ -16,7 +16,7 @@ test('Get second and third', () => {
   const expectedOutput = [ 5, 11];
   const expectedNumbers = [ 90, 5, 11, 5, 6 ];
 
-  const output = functions.get2ndAnd3rd( myArray );
+  const output = functions.get2ndAnd3rd( numbers );
 
   expect(output).toEqual(expectedOutput);
   expect(numbers).toEqual(expectedNumbers);
