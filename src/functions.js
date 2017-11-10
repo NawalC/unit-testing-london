@@ -1,41 +1,53 @@
 const functions = {
 
   removeMiddle: function( words ){
-    // words is an array of strings. Remove the middle word from the array and return it
+    // words is an array of strings
+    // return a new array containing only the middle word
+    // the words array should no longer contain the middle word
+    // hint: splice
   },
 
   get2ndAnd3rd: function( myArray ){
-    // myArray is an array. Return an array containing 2nd and 3rd items from myArray
-    // make sure myArray remains unchanged.
+    // myArray is an array of numbers
+    // return an array containing the 2nd and 3rd items from myArray
+    // myArray should remain unchanged
+    // hint: filter
   },
 
   mapper: function( myArray ){
-    // return a new array which has same all items in myArray incremented by one
-    // make sure myArray remains unchanges
+    // myArray is an array of numbers
+    // return a new array which has all items in myArray incremented by one
+    // myArray should remain unchanged
+    // hint: map
   },
 
   wordLengths: function( words ){
-    // the parameter words is an array of words. Return a new array that contains
-    // the number of letters in each word
+    // words is an array of strings
+    // return a new array that contains the number of letters in each word
+    // hint: strings have a 'length' property
   },
 
   largerThanTen: function( numbers ){
-    // numbers is an array of numbers. return an array that contains all numbers
-    // from the input array which are greater than 10
+    // numbers is an array of numbers
+    // return a new array that contains only numbers from the input array which are greater than 10
   },
 
   even: function( numbers ){
-    // numbers is an array of numbers. return an array that contains all even numbers
-    // from the input array
+    // numbers is an array of numbers
+    // return a new array that contains only even numbers from the input array
     // hint: you may want to use the modulus operator '%'
   },
 
   findTheNeedle: function( words ){
-    // words is an array of words. Return the index of the word 'needle'
+    // words is an array of words
+    // return the index of the word 'needle'
+    // hint: indexOf
   },
 
   findLargest: function( numbers ){
-    // numbers is an array of numbers. return the largest number from that array
+    // numbers is an array of numbers
+    // return the largest number from that array
+    // hint: Math.max
   },
 
   buildTrain: function( numberOfCarriages ){
