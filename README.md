@@ -19,20 +19,13 @@ To run the tests from the console, run the command: `npm test`.
 
 To keep the tests running (auto updating when you save files), run the command: `npm test -- --watch` then press `a` to run all the tests and keep watching the files for changes. To quit the tests, type `q`.
 
-To run a specifc test from the command line, do: `npm test -- filname` for example `npm test -- find-alive` (that will run only the files that matches find-alive, i.e. findAlive.test.js).
+## Exercises
 
-## Exercise 1
+Run `npm test -- --watch`.
 
-Edit `test/sum.test.js`. Move the actual sum function to a different file (`src/sum.js`) and export it from there. The go back to your test file and import the sum function from `src/sum.js`.
+You should have lots of failing tests. Implement each function in `src/functions.js` so all the unit tests pass when you run `npm test`.
 
-## Exercise 2
-
-Run `npm test`.
-
-To begin with export the functions object from `src/functions.js` and import it into `test/functions.test.js`. Run `npm test` again. You should have 10 failing tests.
-
-Implement all the functions in `src/functions.js` so all the unit test pass when you run `npm test`.
-
-## Exercise 3
-
-Create a function `src/functions.js` that accepts 2 arrays as arguments and returns a new array which contains all the items from the two inputs. Write a test for that function in `test/functions.test.js`.
+## Tips
+ - Don't copy and paste code. Write all code from beginning and make sure you understand what each line does.
+ - If you are not sure what a method or function does Google it. `MDN` and `Stack Overflow` are great resources.
+ - User the debugger to step through code execution and see what each line does if you are not sure.

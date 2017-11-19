@@ -1,3 +1,9 @@
+const functions = require('../src/functions');
+
+test('Check', () => {
+  expect(true).toEqual(true);
+});
+
 test('Remove middle', () => {
   const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle'];
 
@@ -42,6 +48,28 @@ test('Get word lengths', () => {
   expect(output).toEqual( expected );
 });
 
+test('Cities', () => {
+  const capitals = [
+    { city: 'Paris', country: 'France' },
+    { city: 'Madrid', country: 'Spain' },
+    { city: 'Rome', country: 'Italy' },
+  ];
+
+  function transform({city, country}){
+    return `${city} is the capital of ${country}`;
+  }
+
+  const expected = [
+    'Paris is the capital of France',
+    'Madrid is the capital of Spain',
+    'Rome is the capital of Italy'
+  ];
+
+  const result = functions.cities(capitals, transform);
+
+  expect(result).toEqual(expected);
+});
+
 test('Get numbers greater than 10', () => {
   const numbers = [ 4, 10, 32, 9, 21];
   const expected = [ 32, 21 ];
@@ -74,20 +102,112 @@ test('Find largest number', () => {
   expect(output).toEqual( expected );
 });
 
-test('Build train', () => {
-  const train = functions.buildTrain( 8 );
+test('Add all numbers', () => {
+  const numbers = [ 9, 23, 10, 3, 8 ];
+  const expected = 53;
 
-  expect( train.numberOfCarriages ).toEqual( 8 );
+  const output = functions.addAllnumbers( numbers );
+
+  expect( output ).toEqual( 53 );
 });
 
-test('Book a table', () => {
+test('Average', () => {
+  const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
+  const expected = 53;
 
-  const bookTable = function(){
-    this.freeTables--;
-    if( this.freeTables < 0 ) this.freeTables = 0;
-  }
+  const output = functions.average( numbers );
 
-  const restaurant = functions.addMethod( bookTable );
-  restaurant.bookTable();
-  expect( restaurant.freeTables ).toBe( 6 );
+  expect( output ).toEqual( 5 );
 });
+
+test('Paint shop', () => {
+  const cars = [
+    { make: 'Ford', model: 'Fiesta', colour: 'Red' },
+    { make: 'Land Rover', model: 'Defender', colour: 'Muddy' },
+    { make: 'Toyota', model: 'Prius', colour: 'Silver' },
+    { make: 'Honda', model: 'Civic', colour: 'Yellow' }
+  ];
+
+  const unpaintedCars = [
+    { make: 'Ford', model: 'Fiesta', colour: 'Red' },
+    { make: 'Land Rover', model: 'Defender', colour: 'Muddy' },
+    { make: 'Toyota', model: 'Prius', colour: 'Silver' },
+    { make: 'Honda', model: 'Civic', colour: 'Yellow' }
+  ];
+
+  const repaintedCars = [
+    { make: 'Ford', model: 'Fiesta', colour: 'Pink' },
+    { make: 'Land Rover', model: 'Defender', colour: 'Pink' },
+    { make: 'Toyota', model: 'Prius', colour: 'Pink' },
+    { make: 'Honda', model: 'Civic', colour: 'Pink' }
+  ];
+
+  const output = functions.paintShop( cars, 'Pink' );
+
+  expect( output ).toEqual( repaintedCars );
+  expect( cars ).toEqual( unpaintedCars );
+});
+
+test('Car sales', () => {
+  const carsSold = [
+    { make: 'Ford', model: 'Fiesta', colour: 'Red', price: 5999 },
+    { make: 'Land Rover', model: 'Defender', colour: 'Muddy', price: 12000 },
+    { make: 'Toyota', model: 'Prius', colour: 'Silver', price: 6500 },
+    { make: 'Honda', model: 'Civic', colour: 'Yellow', price: 8000 },
+    { make: 'Ford', model: 'Fiesta', colour: 'Red', price: 15000 },
+    { make: 'Land Rover', model: 'Discovery', colour: 'Blue', price: 9000 },
+    { make: 'Ford', model: 'Fiesta', colour: 'Green', price: 2000 }
+  ];
+
+  const totals = {
+    'Ford': 22999,
+    'Honda': 8000,
+    'Land Rover': 21000,
+    'Toyota': 6500
+  };
+  
+  const output = functions.sales( carsSold );
+
+  expect( output ).toEqual( totals );
+});
+
+test('Second largest', () => {
+  const numbers = [ 2, 0, 23, 0, 57, 1 ];
+
+  const output = functions.secondLargest( numbers );
+
+  expect( output ).toEqual( 2 );
+});
+
+test('Factorial', () => {
+  const in1 = 5;
+  const exp1 = 120;
+
+  const in2 = 9;
+  const exp2 = 362880;
+
+  const in3 = 1;
+  const exp3 = 1;
+
+  const in4 = 0;
+  const exp4 = 1;
+
+  const in5 = 3;
+  const exp5 = 6;
+
+  const out1 = functions.factorial( in1 );
+  const out2 = functions.factorial( in2 );
+  const out3 = functions.factorial( in3 );
+  const out4 = functions.factorial( in4 );
+  const out5 = functions.factorial( in5 );
+
+  expect( out1 ).toEqual( exp1 );
+  expect( out2 ).toEqual( exp2 );
+  expect( out3 ).toEqual( exp3 );
+  expect( out4 ).toEqual( exp4 );
+  expect( out5 ).toEqual( exp5 );
+});
+
+
+
+
