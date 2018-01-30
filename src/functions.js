@@ -144,5 +144,6 @@ module.exports = {
   average,
   paintShop,
   sales,
-  secondLargest
+  secondLargest,
+  factorial
 };
