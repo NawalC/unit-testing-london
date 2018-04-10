@@ -15,6 +15,11 @@ function get2ndAnd3rd( myArray ){
 }
 
 function mapper( myArray ){
+
+  let newArray = myArray.map(function(i){
+    return i +=1;
+  })
+  return newArray
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
@@ -22,6 +27,10 @@ function mapper( myArray ){
 }
 
 function wordLengths( words ){
+   for ( i=0; i < words.length; i++){
+     words[i]=words[i].length;
+   }
+   return words;
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
