@@ -1,4 +1,5 @@
 function removeMiddle( words ){
+  return words.splice(words.length/2,1);
   // words is an array which contains an odd number of strings
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
@@ -6,6 +7,7 @@ function removeMiddle( words ){
 }
 
 function get2ndAnd3rd( myArray ){
+  return myArray.slice(1,3);  //string.slice(start, end)
   // myArray is an array of numbers
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
