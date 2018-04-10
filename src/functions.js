@@ -37,6 +37,11 @@ function wordLengths( words ){
 }
 
 function cities( capitals, formatter ){
+
+  for (i=0; i<capitals.length; i++){
+    capitals[i]= formatter(capitals[i]);
+  }
+  return capitals;
   // capitals is an array of objects that have a city and country property
   // for example
   // {
@@ -50,6 +55,11 @@ function cities( capitals, formatter ){
 }
 
 function largerThanTen( numbers ){
+  let newArray = numbers.filter(function(num){
+ return num > 10;
+ })
+
+ return newArray;
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
