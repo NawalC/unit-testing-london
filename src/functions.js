@@ -101,12 +101,35 @@ function addAllnumbers( numbers ) {
   // return the sum of all the numbers in the array
 }
 function average( things ) {
+  var newArray = things.filter(function(x){
+    return typeof x === 'number';
+  })
+    
+  var total= 0;
+
+  for(i=0; i < newArray.length ; i++){
+     total= total + newArray[i]
+ }
+
+  // var total = addAllnumbers(newArray);
+    
+  return total/newArray.length
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
 }
 
 function paintShop( cars, colour ){
+
+  let newArray = [];
+  for (i = 0; i < cars.length; i++){
+    paintedCars = Object.assign({}, cars[i]);
+    if (paintedCars.make === 'Ford'){
+      paintedCars.colour = colour
+    }
+    newArray.push(paintedCars)
+  }
+  return newArray
   // cars is an array of objects that have 
   // their properties are `make`, `model` and `colour`
 
