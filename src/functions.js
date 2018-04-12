@@ -66,27 +66,40 @@ function largerThanTen( numbers ){
 }
 
 function even( numbers ){
+  let evenNum = [];
+  for(var i=0; i<=numbers.length; i++)
+  if (numbers[i] % 2 == 0) {
+    evenNum.push(numbers[i]);
+  } else { continue }
+  return evenNum;
+};
+
+
+
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
-}
+
 
 function findTheNeedle( words ){
+  return words.indexOf('needle');
   // words is an array of words
   // return the index of the word 'needle'
   // hint: indexOf
 }
 
 function findLargest( numbers ){
+  return Math.max(...numbers);
   // numbers is an array of numbers
   // return the largest number from that array
 }
 
 function addAllnumbers( numbers ) {
+  
+  return numbers.reduce( (accumulator, currentValue) => accumulator + currentValue );
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
 }
-
 function average( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
