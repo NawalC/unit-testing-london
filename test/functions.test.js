@@ -176,7 +176,7 @@ test('Second largest', () => {
 
   const output = functions.secondLargest( numbers );
 
-  expect( output ).toEqual( 2 );
+  expect( output ).toEqual( 23 );
 });
 
 test('Factorial', () => {

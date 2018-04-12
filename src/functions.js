@@ -89,7 +89,8 @@ function findTheNeedle( words ){
 }
 
 function findLargest( numbers ){
-  return Math.max(...numbers);
+ // return Math.max(...numbers);
+ return Math.max.apply(null, numbers);
   // numbers is an array of numbers
   // return the largest number from that array
 }
@@ -148,6 +149,34 @@ function paintShop( cars, colour ){
 }
 
 function sales( cars ){
+  var totalSoldCars = {};
+
+  for(i=0; i<cars.length; i++)
+  {
+    var price = cars[i].price;
+    var make = cars[i].make;
+
+    //if(soldCars[make] == undefined)
+    if(totalSoldCars .hasOwnProperty(make) == false)
+    {
+      totalSoldCars [make] = price;
+    }
+    else
+    {
+      totalSoldCars [make] = totalSoldCars [make] + price;
+    }
+   
+  }
+
+  return totalSoldCars; 
+  
+}
+
+
+
+
+
+
   // cars is an array of objects that have been sold
   // their properties are `make`, `model`, `colour` and `price`
 
@@ -166,14 +195,18 @@ function sales( cars ){
   //   'Ford': 20000,
   //   'Vauxhall': 15000
   // }
-}
+
 
 // Harder challenges
 function secondLargest( numbers ){
+
+  var max = Math.max.apply(null, numbers); 
+  numbers.splice(numbers.indexOf(max), 1); 
+  return Math.max.apply(null, numbers); 
   // numbers is an array of numbers
   // return the index of the second 
   // largest number in the array
-}
+};
 
 function factorial( int ) {
   // int is an integer
